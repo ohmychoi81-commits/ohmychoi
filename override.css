@@ -1,0 +1,4 @@
+.hero{background-image:url('assets/hero.jpg')}
+.resource-hero{background-image:url('assets/resources-hero.jpg')}
+.mobile-nav.show{display:flex}
+[hidden]{display:none!important}
