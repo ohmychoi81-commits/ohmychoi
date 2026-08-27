@@ -13,5 +13,5 @@ resourceList.innerHTML=groups.map(g=>`<section class="resource-card" id="${g[0]}
 const show=p=>{homePage.hidden=p!=='home';resourcesPage.hidden=p!=='resources';scrollTo(0,0);document.querySelector('.mobile-nav').classList.remove('show')};
 document.querySelectorAll('[data-page]').forEach(el=>el.onclick=()=>show(el.dataset.page));
 document.querySelectorAll('[data-scroll]').forEach(el=>el.onclick=()=>{show('home');setTimeout(()=>document.getElementById(el.dataset.scroll).scrollIntoView(),0)});
-document.querySelector('.hamb').onclick=()=>document.querySelector('.mobile-nav').classList.toggle('show');
+document.querySelector('.hamb').onclick=e=>{const menu=document.querySelector('.mobile-nav');const opened=menu.classList.toggle('show');e.currentTarget.textContent=opened?'✕':'☰';e.currentTarget.setAttribute('aria-expanded',String(opened));};
 const fix=document.createElement('link');fix.rel='stylesheet';fix.href='override.css';document.head.appendChild(fix);
